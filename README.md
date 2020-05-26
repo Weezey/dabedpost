@@ -50,7 +50,7 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 - 74.110.152.146
 
 Machines within the network can only be accessed by SSH.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+- Only my personal machine@74.110.152.146 can access the ELK stack
 
 A summary of the access policies in place can be found in the table below.
 
@@ -67,7 +67,10 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- Ansible is a provisioners that automatically configure VMs or containers for you. Instead of manually logging into a machine and issuing commands like apt get or editing configuration files yourself, you can use a provisioner to do this automatically.
+- The primary benefits of provisioners are that they a.) drastically reduce the potential for human error and b.) make it easy to configure potentially thousands of identical machines all at once.
+Infrastructure as code (IaC) is the idea that the configurations for all of the VMs, containers, and networks in your deployment should be defined in text files, which you can use with provisioners to automatically recreate machines and networks whenever necessary.
+- The primary benefit to IaC is that everyone can see exactly how the network is configured by reading text files. These can easily be version controlled in a tool like Git, or Apple Time Machine and Microsoft OneDrive.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
