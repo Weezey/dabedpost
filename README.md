@@ -25,13 +25,12 @@ Load balancing ensures that the application will be highly resilient, in additio
 
 - Load balancers are one method of preventing DoS attacks. DoS attacks are a common problem with websites. One way to mitigate DoS attacks is to have multiple servers running the same website, with a load balancer in front of them. A load balancer provides a website an external IP address that is accessed by the internet. The load balancer receives any traffic that comes into the website and distributes it across multiple servers. As the website receives more traffic, more servers can be added to the group ("pool") of servers that the load balancer has access to. This helps distribute traffic evenly among the servers and mitigates DoS attacks. This load balancer typically also has a health probe function. This function checks regularly to make sure all of the machines behind the load balancer are functioning before sending traffic to them. Machines with issues are reported, and the load balancers stop sending traffic to those machines. This system can still be overwhelmed with traffic and taken down, but it is much more resilient than if a single server was running the website.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems and system metrics.
 
 - Filebeat collects data about the file system
 - Metricbeat collects machine metrics, such as uptime
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name          | Function           | IP Address             | Operating System |
 |---------------|--------------------|------------------------|------------------|
@@ -47,10 +46,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the Jump Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 74.110.152.146
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by SSH.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
