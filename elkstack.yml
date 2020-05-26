@@ -1,0 +1,33 @@
+---
+- name: My ELK Stack
+  hosts: elkservers
+  become: True
+  tasks:
+
+  - name: Change the memory on the host machine
+    shell: sysctl -w vm.max_map_count=262144
+  
+  - name: Install docker.io
+    apt:
+     name: docker.io
+     state: present
+
+  - name: Install python-pip
+    apt:
+     name: python-pip
+     state: present
+
+  - name: Install docker
+    pip:
+     name: docker
+     state: present
+
+  - name: Download and launch docker ELK stack
+    docker_container:
+     name: elkstack
+     image: sebp/elk
+     state: started
+     published_ports:
+      - 5601:5601
+      - 9200:9200
+      - 5044:5044
