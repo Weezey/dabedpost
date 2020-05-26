@@ -6,7 +6,7 @@ https://github.com/Weezey/dabedpost/blob/master/AzureNetworkDiagram.png
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the YML file may be used to install only certain pieces of it, such as Filebeat.
 
-!elkstack.yml
+https://github.com/Weezey/dabedpost/blob/master/elkstack.yml
 
 This document contains the following details:
 - Description of the Topology
@@ -54,11 +54,15 @@ Machines within the network can only be accessed by SSH.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name          | Publicly Accessible | Allowed IP Addresses |
+|---------------|---------------------|----------------------|
+| Jump Box      | No                  | 74.110.152.146       |
+| VM1           | No                  | 10.0.0.9             |
+| VM2           | No                  | 10.0.0.9             |
+| VM3           | No                  | 10.0.0.9             |
+| VM4           | No                  | 10.0.0.9             |
+| ELK Stack     | No                  | 74.110.152.146       |
+| Load Balancer | Yes                 | All                  |
 
 ### Elk Configuration
 
